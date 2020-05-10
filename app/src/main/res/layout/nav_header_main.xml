@@ -14,23 +14,36 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/nav_header_desc"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/logo_white" />
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/nav_header_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:text="@string/ocelot_company"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/rojo1"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_correo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nav_header_subtitle" />
+        android:text="@string/string_correo1"
+        android:textColor="@color/rojo2"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textCorreo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_correo2"
+        android:textColor="#A80101"
+        android:textStyle="bold" />
 
 </LinearLayout>
