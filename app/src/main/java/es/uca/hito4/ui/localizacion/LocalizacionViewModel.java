@@ -1,16 +1,15 @@
-package es.uca.hito4.ui.send;
+package es.uca.hito4.ui.localizacion;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SendViewModel extends ViewModel {
-
+public class LocalizacionViewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
-    public SendViewModel() {
+    public LocalizacionViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is send fragment");
+        mText.setValue("This is Localizacion Fragment");
     }
 
     public LiveData<String> getText() {

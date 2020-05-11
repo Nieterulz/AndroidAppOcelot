@@ -3,41 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_asistentes">
 
     <fragment
         android:id="@+id/nav_asistentes"
         android:name="es.uca.hito4.ui.asistentes.AsistentesFragment"
         android:label="@string/menu_asistentes"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_asistentes" />
 
     <fragment
         android:id="@+id/nav_programa"
-        android:name="es.uca.hito4.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="es.uca.hito4.ui.programa.ProgramaFragment"
+        android:label="@string/menu_programa"
+        tools:layout="@layout/fragment_programa" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="es.uca.hito4.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_fechas"
+        android:name="es.uca.hito4.ui.fechas.FechasFragment"
+        android:label="@string/menu_fechas"
+        tools:layout="@layout/fragment_fechas" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="es.uca.hito4.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_localizacion"
+        android:name="es.uca.hito4.ui.localizacion.LocalizacionFragment"
+        android:label="@string/menu_localizacion"
+        tools:layout="@layout/fragment_localizacion" />
 
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="es.uca.hito4.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="es.uca.hito4.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
 </navigation>

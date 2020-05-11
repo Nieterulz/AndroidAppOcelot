@@ -1,4 +1,4 @@
-package es.uca.hito4.ui.share;
+package es.uca.hito4.ui.programa;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,16 @@ import androidx.lifecycle.ViewModelProviders;
 
 import es.uca.hito4.R;
 
-public class ShareFragment extends Fragment {
-
-    private ShareViewModel shareViewModel;
+public class ProgramaFragment extends Fragment {
+    private ProgramaViewModel programaViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        shareViewModel =
-                ViewModelProviders.of(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_share, container, false);
-        final TextView textView = root.findViewById(R.id.text_share);
-        shareViewModel.getText().observe(this, new Observer<String>() {
+        programaViewModel =
+                ViewModelProviders.of(this).get(ProgramaViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_programa, container, false);
+        final TextView textView = root.findViewById(R.id.text_programa);
+        programaViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

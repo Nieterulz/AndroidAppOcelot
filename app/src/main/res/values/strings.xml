@@ -21,4 +21,7 @@
     <string name="string_correo2">luis.decelismunoz@alum.uca.es</string>
     <string name="ocelot_company">Ocelot Company</string>
     <string name="menu_asistentes">Asistentes</string>
+    <string name="menu_programa">Programa</string>
+    <string name="menu_fechas">Fechas</string>
+    <string name="menu_localizacion">Localización</string>
 </resources>

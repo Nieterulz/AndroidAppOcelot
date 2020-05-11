@@ -2,9 +2,9 @@ package es.uca.hito4.ui.asistentes;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
-class AsistentesViewModel {
-
+public class AsistentesViewModel  extends ViewModel {
     private MutableLiveData<String> mText;
 
     public AsistentesViewModel() {
