@@ -5,6 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/negro"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/anadir_asistente" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_asistentes"
         android:layout_width="match_parent"
