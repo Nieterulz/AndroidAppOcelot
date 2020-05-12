@@ -11,27 +11,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AsistenteAdapter extends RecyclerView.Adapter {
-    public static ArrayList<Asistente> asistentes;
+public class AsistenteAdapter extends RecyclerView.Adapter<AsistenteAdapter.MyViewHolder> {
+    public ArrayList<Asistente> asistentes;
     private Context context;
 
     public AsistenteAdapter(ArrayList<Asistente> myDataset) {
-        asistentes = myDataset;
+        this.asistentes = myDataset;
     }
 
     @NonNull
     @Override
-    public AsistenteAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_asistente,
                         parent, false);
         MyViewHolder vh = new MyViewHolder(v);
-        context = parent.getContext();
+        //context = parent.getContext();
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((MyViewHolder) holder).bindView(position);
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.nombre.setText(asistentes.get(position).getNombre());
     }
 
     @Override
@@ -39,17 +39,12 @@ public class AsistenteAdapter extends RecyclerView.Adapter {
         return asistentes.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView nombre;
         public MyViewHolder(View v) {
             super(v);
             nombre = (TextView) v.findViewById(R.id.nombre_asistente);
             itemView.setOnClickListener(this);
-        }
-
-        public void bindView(int position)
-        {
-            this.nombre.setText(asistentes.get(position).getNombre());
         }
 
         @Override

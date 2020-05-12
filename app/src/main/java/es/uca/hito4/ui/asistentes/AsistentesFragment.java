@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,17 +22,15 @@ public class AsistentesFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
+    private LinearLayoutManager layoutManager;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        asistentesViewModel =
-                ViewModelProviders.of(this).get(AsistentesViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_asistentes, container, false);
+        View v = inflater.inflate(R.layout.fragment_asistentes, container, false);
 
         // Referenciamos al RecyclerView
-        recyclerView = (RecyclerView) root.findViewById(R.id.recycler_view_asistentes);
+        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view_asistentes);
         // Mejoramos rendimiento con esta configuración
         recyclerView.setHasFixedSize(true);
         // Creamos un LinearLayoutManager para gestionar el item_asistente.xml creado antes
@@ -41,7 +38,7 @@ public class AsistentesFragment extends Fragment {
         // Lo asociamos al RecyclerView
         recyclerView.setLayoutManager(layoutManager);
         // Creamos un ArrayList de Asistentes
-        ArrayList<Asistente> asistentes = new ArrayList<Asistente>();
+        ArrayList<Asistente> asistentes = new ArrayList<>();
 
         // Cargar asistentes
         asistentes.add(new Asistente("Antonio José Sánchez Muñoz", "44065328L",
@@ -56,6 +53,6 @@ public class AsistentesFragment extends Fragment {
         // Asociamos el adaptador al RecyclerView
         recyclerView.setAdapter(adapter);
 
-        return root;
+        return v;
     }
 }

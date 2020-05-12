@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.drawer_layout, fragment);
-        fragmentTransaction.commit();
     }
 
     @Override
