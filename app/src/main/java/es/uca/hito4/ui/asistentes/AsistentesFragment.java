@@ -1,9 +1,11 @@
 package es.uca.hito4.ui.asistentes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -15,11 +17,10 @@ import java.util.Date;
 
 import es.uca.hito4.Asistente;
 import es.uca.hito4.AsistenteAdapter;
+import es.uca.hito4.FichaPersonal;
 import es.uca.hito4.R;
 
 public class AsistentesFragment extends Fragment {
-    private AsistentesViewModel asistentesViewModel;
-
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private LinearLayoutManager layoutManager;
@@ -42,11 +43,13 @@ public class AsistentesFragment extends Fragment {
 
         // Cargar asistentes
         asistentes.add(new Asistente("Antonio José Sánchez Muñoz", "44065328L",
-                        "610989598", new Date(1997, 12, 19),
-                        new Date(2020, 7,10)));
+                        "610989598", "19/12/1997", "13/05/2020"));
         asistentes.add(new Asistente("Luis de Celis Muñoz", "44065328L",
-                "610989598", new Date(1997, 12, 19),
-                new Date(2020, 7,10)));
+                "610989598", "19/12/1997", "13/05/2020"));
+        asistentes.add(new Asistente("Alvaro Sánchez Muñoz", "44065328L",
+                "610989598", "19/12/1997", "13/05/2020"));
+        asistentes.add(new Asistente("Rosario Muñoz Salcedo", "44065328L",
+                "610989598", "19/12/1997", "13/05/2020"));
 
         // Creamos un AsistenteAdapter pasándole todos nuestros Asistentes
         adapter = new AsistenteAdapter(asistentes);
