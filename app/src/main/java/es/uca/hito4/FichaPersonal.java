@@ -17,6 +17,7 @@ public class FichaPersonal extends AppCompatActivity {
         setContentView(R.layout.activity_ficha_personal);
 
         Intent intent = getIntent();
+        final String _id = intent.getExtras().getString("_id");
         final String nombre = intent.getExtras().getString("nombre");
         final String dni = intent.getExtras().getString("dni");
         final String telefono = intent.getExtras().getString("telefono");
@@ -36,6 +37,7 @@ public class FichaPersonal extends AppCompatActivity {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, EditarFichaPersonal.class);
 
+                intent.putExtra("_id", _id);
                 intent.putExtra("nombre", nombre);
                 intent.putExtra("dni", dni);
                 intent.putExtra("telefono", telefono);

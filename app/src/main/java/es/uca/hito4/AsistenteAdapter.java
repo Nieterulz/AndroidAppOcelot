@@ -49,7 +49,7 @@ public class AsistenteAdapter extends RecyclerView.Adapter<AsistenteAdapter.MyVi
                     String result = get.execute().get();
                     JSONArray array = new JSONArray(result);
                     asistente = array.getJSONObject(0);
-                    System.out.println(asistente.toString());
+                    intent.putExtra("_id", asistente.getString("_id"));
                     intent.putExtra("nombre", asistente.getString("nombre"));
                     intent.putExtra("dni", asistente.getString("dni"));
                     intent.putExtra("telefono", asistente.getString("telefono"));
