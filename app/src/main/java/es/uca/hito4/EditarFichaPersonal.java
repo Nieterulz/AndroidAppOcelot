@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EditarFichaPersonal extends AppCompatActivity {
 
@@ -34,15 +35,19 @@ public class EditarFichaPersonal extends AppCompatActivity {
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Volver a Ficha Personal actualizando datos
+
+
+                Toast.makeText(getApplicationContext(),
+                        "Asistente actualizado con éxito",
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
-        ImageButton cancelButton = findViewById(R.id.confirm_button);
+        ImageButton cancelButton = findViewById(R.id.cancel_button);
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Volver a Ficha Personal sin actualizar datos.
+                finish();
             }
         });
     }
