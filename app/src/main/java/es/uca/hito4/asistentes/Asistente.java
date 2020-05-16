@@ -1,4 +1,4 @@
-package es.uca.hito4;
+package es.uca.hito4.asistentes;
 
 public class Asistente {
     private String _id;

@@ -1,4 +1,4 @@
-package es.uca.hito4;
+package es.uca.hito4.asistentes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
 
+import es.uca.hito4.R;
 import es.uca.hito4.operaciones.Put;
 
 public class EditarFichaPersonal extends AppCompatActivity {

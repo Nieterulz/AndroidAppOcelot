@@ -1,5 +1,7 @@
-package es.uca.hito4.ui.asistentes;
+package es.uca.hito4.asistentes;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +19,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-import es.uca.hito4.Asistente;
-import es.uca.hito4.AsistenteAdapter;
 import es.uca.hito4.operaciones.GetAll;
 import es.uca.hito4.R;
 
@@ -42,6 +42,16 @@ public class AsistentesFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity()){};
         // Lo asociamos al RecyclerView
         recyclerView.setLayoutManager(layoutManager);
+
+        v.findViewById(R.id.anadir_asistente).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, AnadirAsistente.class);
+
+                context.startActivity(intent);
+            }
+        });
 
         return v;
     }

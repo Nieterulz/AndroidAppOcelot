@@ -1,4 +1,4 @@
-package es.uca.hito4;
+package es.uca.hito4.asistentes;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -11,6 +11,7 @@ import androidx.fragment.app.DialogFragment;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
+import es.uca.hito4.R;
 import es.uca.hito4.operaciones.Delete;
 
 public class EliminarAsistente extends DialogFragment {

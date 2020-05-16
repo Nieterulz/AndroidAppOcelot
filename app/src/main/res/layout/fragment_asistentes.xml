@@ -10,11 +10,10 @@
         android:id="@+id/anadir_asistente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/negro"
-        android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:layout_marginHorizontal="100dp"
         android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_add_person"
         android:text="@string/anadir_asistente" />
 
     <androidx.recyclerview.widget.RecyclerView

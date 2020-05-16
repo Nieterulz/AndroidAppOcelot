@@ -1,4 +1,4 @@
-package es.uca.hito4;
+package es.uca.hito4.asistentes;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
+import es.uca.hito4.R;
 import es.uca.hito4.operaciones.Get;
 
 public class FichaPersonal extends AppCompatActivity {
