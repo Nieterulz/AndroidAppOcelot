@@ -1,24 +1,19 @@
-package es.uca.hito4;
+package es.uca.hito4.operaciones;
 
 import android.os.AsyncTask;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 
-public class GetAll extends AsyncTask<Void, Void, String> {
-    private static ArrayList<Asistente> asistentes;
+public class Get extends AsyncTask<Void, Void, String>  {
+    private String _id;
     private static final String SERVER = "http://192.168.8.104:8080/asistentes";
-    public GetAll(ArrayList<Asistente> asistentes)
+    public Get(String _id)
     {
-        this.asistentes = asistentes;
+        this._id = _id;
     }
 
     @Override
@@ -32,7 +27,7 @@ public class GetAll extends AsyncTask<Void, Void, String> {
 
         try {
             // connect to the server
-            URL myUrl = new URL(SERVER);
+            URL myUrl = new URL(SERVER + "/" + _id);
             HttpURLConnection connection =(HttpURLConnection) myUrl.openConnection();
             connection.setRequestMethod(REQUEST_METHOD);
             connection.setReadTimeout(READ_TIMEOUT);
@@ -62,22 +57,5 @@ public class GetAll extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String result){
         super.onPostExecute(result);
         System.out.println(result);
-        try {
-            JSONArray array = new JSONArray(result);
-            String _id, nombre;
-            asistentes.clear();
-            for(int i=0; i < array.length(); i++) {
-                JSONObject object = array.getJSONObject(i);
-                _id = object.getString("_id");
-                nombre = object.getString("nombre");
-                asistentes.add(i, new Asistente(_id, nombre));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public ArrayList<Asistente> getAsistentes(){
-        return asistentes;
     }
 }

@@ -18,6 +18,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+import es.uca.hito4.operaciones.Get;
+
 public class AsistenteAdapter extends RecyclerView.Adapter<AsistenteAdapter.MyViewHolder> {
     public ArrayList<Asistente> asistentes;
 
@@ -45,7 +47,7 @@ public class AsistenteAdapter extends RecyclerView.Adapter<AsistenteAdapter.MyVi
 
                 try {
                     JSONObject asistente = new JSONObject();
-                    Get get = new Get(asistentes.get(position).getId(), asistente);
+                    Get get = new Get(asistentes.get(position).getId());
                     String result = get.execute().get();
                     JSONArray array = new JSONArray(result);
                     asistente = array.getJSONObject(0);

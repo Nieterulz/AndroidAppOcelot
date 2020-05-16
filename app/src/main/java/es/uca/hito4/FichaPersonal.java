@@ -1,7 +1,5 @@
 package es.uca.hito4;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,20 +7,43 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Objects;
+import java.util.concurrent.ExecutionException;
+
+import es.uca.hito4.operaciones.Get;
+
 public class FichaPersonal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ficha_personal);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         Intent intent = getIntent();
-        final String _id = intent.getExtras().getString("_id");
-        final String nombre = intent.getExtras().getString("nombre");
-        final String dni = intent.getExtras().getString("dni");
-        final String telefono = intent.getExtras().getString("telefono");
-        final String fechaNacimiento = intent.getExtras().getString("fechaNacimiento");
-        final String fechaInscripcion = intent.getExtras().getString("fechaInscripcion");
+        final String _id = Objects.requireNonNull(intent.getExtras()).getString("_id");
+        Get get = new Get(_id);
+        try {
+            String result = get.execute().get();
+
+        JSONArray array = new JSONArray(result);
+        JSONObject asistente = array.getJSONObject(0);
+
+        final String nombre = asistente.getString("nombre");
+        final String dni = asistente.getString("dni");
+        final String telefono = asistente.getString("telefono");
+        final String fechaNacimiento = asistente.getString("f_nac");
+        final String fechaInscripcion = asistente.getString("f_ins");
 
         ((TextView)findViewById(R.id.nombre)).setText(nombre);
         ((TextView)findViewById(R.id.dni)).setText(dni);
@@ -45,6 +66,19 @@ public class FichaPersonal extends AppCompatActivity {
                 intent.putExtra("fechaInscripcion", fechaInscripcion);
 
                 context.startActivity(intent);
+            }
+        });
+        } catch (ExecutionException | InterruptedException | JSONException e) {
+            e.printStackTrace();
+        }
+
+        ImageButton deleteButton = findViewById(R.id.delete);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fm = getSupportFragmentManager();
+                EliminarAsistente eliminarAsistente = new EliminarAsistente(_id);
+                eliminarAsistente.show(fm, "");
             }
         });
     }

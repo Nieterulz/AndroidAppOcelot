@@ -1,10 +1,6 @@
-package es.uca.hito4;
+package es.uca.hito4.operaciones;
 
 import android.os.AsyncTask;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,15 +8,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Get extends AsyncTask<Void, Void, String>  {
-    private String _id;
-    private JSONObject asistente;
+public class GetAll extends AsyncTask<Void, Void, String> {
     private static final String SERVER = "http://192.168.8.104:8080/asistentes";
-    public Get(String _id, JSONObject asistente)
-    {
-        this._id = _id;
-        this.asistente = asistente;
-    }
 
     @Override
     protected String doInBackground(Void... voids) {
@@ -33,7 +22,7 @@ public class Get extends AsyncTask<Void, Void, String>  {
 
         try {
             // connect to the server
-            URL myUrl = new URL(SERVER + "/" + _id);
+            URL myUrl = new URL(SERVER);
             HttpURLConnection connection =(HttpURLConnection) myUrl.openConnection();
             connection.setRequestMethod(REQUEST_METHOD);
             connection.setReadTimeout(READ_TIMEOUT);
@@ -63,16 +52,5 @@ public class Get extends AsyncTask<Void, Void, String>  {
     protected void onPostExecute(String result){
         super.onPostExecute(result);
         System.out.println(result);
-        JSONArray array;
-        try {
-            array = new JSONArray(result);
-            asistente = array.getJSONObject(0);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public JSONObject getAsistente(){
-        return asistente;
     }
 }

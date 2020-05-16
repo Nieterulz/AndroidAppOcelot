@@ -1,4 +1,4 @@
-package es.uca.hito4;
+package es.uca.hito4.operaciones;
 
 
 import android.os.AsyncTask;
@@ -26,8 +26,6 @@ public class Put extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... voids) {
         String REQUEST_METHOD = "PUT";
-        int READ_TIMEOUT = 15000;
-        int CONNECTION_TIMEOUT = 15000;
 
         String result;
         String inputLine;
@@ -36,13 +34,25 @@ public class Put extends AsyncTask<Void, Void, String> {
             URL url = new URL(SERVER + "/" + _id);
             HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
             httpCon.setDoOutput(true);
-            httpCon.setRequestMethod("PUT");
+            httpCon.setRequestMethod(REQUEST_METHOD);
+            httpCon.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+            httpCon.setRequestProperty("Accept", "application/json");
             OutputStreamWriter out = new OutputStreamWriter(
                     httpCon.getOutputStream());
             out.write(asistente.toString());
+            out.flush();
             out.close();
             httpCon.getInputStream();
 
+            InputStreamReader streamReader = new InputStreamReader(httpCon.getInputStream());
+            BufferedReader reader = new BufferedReader(streamReader);
+            StringBuilder stringBuilder = new StringBuilder();
+            while((inputLine = reader.readLine()) != null){
+                stringBuilder.append(inputLine);
+            }
+            reader.close();
+            streamReader.close();
+            result = stringBuilder.toString();
         } catch(IOException e) {
             e.printStackTrace();
             result = "error";

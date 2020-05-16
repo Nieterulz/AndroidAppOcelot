@@ -14,6 +14,8 @@ import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
 
+import es.uca.hito4.operaciones.Put;
+
 public class EditarFichaPersonal extends AppCompatActivity {
 
     @Override
@@ -59,6 +61,7 @@ public class EditarFichaPersonal extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),
                         "Asistente actualizado con éxito",
                         Toast.LENGTH_SHORT).show();
+                    finish();
 
                 } catch (JSONException | InterruptedException | ExecutionException e) {
                     Toast.makeText(getApplicationContext(),
