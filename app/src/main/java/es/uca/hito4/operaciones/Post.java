@@ -29,7 +29,7 @@ public class Post extends AsyncTask<Void, Void, String> {
         String inputLine;
 
         try {
-            URL url = new URL(SERVER + "/" + _id);
+            URL url = new URL(SERVER);
             HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
             httpCon.setDoOutput(true);
             httpCon.setRequestMethod(REQUEST_METHOD);
