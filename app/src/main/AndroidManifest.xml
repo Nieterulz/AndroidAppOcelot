@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.uca.hito4">
 
-    <uses-permission android:name="android.permission.INTERNET">
-    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -12,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditarFichaPersonal"></activity>
+        <activity android:name=".asistentes.AnadirAsistente"></activity>
+        <activity android:name=".asistentes.EditarFichaPersonal" />
         <activity
-            android:name=".FichaPersonal"
+            android:name=".asistentes.FichaPersonal"
             android:label="Ficha Personal" />
         <activity
             android:name=".MainActivity"
