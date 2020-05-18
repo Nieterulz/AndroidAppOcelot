@@ -12,8 +12,7 @@ import java.net.URL;
 
 public class Delete extends AsyncTask<Void, Void, String> {
     private String _id;
-    private JSONObject asistente;
-    private static final String SERVER = "http://192.168.8.104:8080/asistentes";
+    private static final String SERVER = UrlServer.getSERVER();
 
     public Delete(String _id)
     {

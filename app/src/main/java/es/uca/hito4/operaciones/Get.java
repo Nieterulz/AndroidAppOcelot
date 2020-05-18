@@ -8,9 +8,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Get extends AsyncTask<Void, Void, String>  {
+public class Get extends AsyncTask<Void, Void, String> {
     private String _id;
-    private static final String SERVER = "http://192.168.8.104:8080/asistentes";
+    private static final String SERVER = UrlServer.getSERVER();
     public Get(String _id)
     {
         this._id = _id;

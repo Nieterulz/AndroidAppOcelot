@@ -15,7 +15,7 @@ import java.net.URL;
 public class Put extends AsyncTask<Void, Void, String> {
     private String _id;
     private JSONObject asistente;
-    private static final String SERVER = "http://192.168.8.104:8080/asistentes";
+    private static final String SERVER = UrlServer.getSERVER();
 
     public Put(String _id, JSONObject asistente)
     {

@@ -9,7 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class GetAll extends AsyncTask<Void, Void, String> {
-    private static final String SERVER = "http://192.168.8.104:8080/asistentes";
+    private static final String SERVER = UrlServer.getSERVER();
 
     @Override
     protected String doInBackground(Void... voids) {
