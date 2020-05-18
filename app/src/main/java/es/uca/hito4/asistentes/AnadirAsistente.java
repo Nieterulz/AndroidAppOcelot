@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import es.uca.hito4.DatePickerFragment;
 import es.uca.hito4.R;

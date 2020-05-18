@@ -1,7 +1,5 @@
-package es.uca.hito4.ui.fechas;
+package es.uca.hito4.fechas;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import es.uca.hito4.R;
-import es.uca.hito4.asistentes.AnadirAsistente;
-import es.uca.hito4.asistentes.Asistente;
-import es.uca.hito4.asistentes.AsistenteAdapter;
 
 public class FechasFragment extends Fragment {
     private RecyclerView recyclerView;
@@ -38,8 +33,12 @@ public class FechasFragment extends Fragment {
         // Lo asociamos al RecyclerView
         recyclerView.setLayoutManager(layoutManager);
 
-        // Creamos un AsistenteAdapter pasándole todos nuestros Asistentes
-        adapter = new AsistenteAdapter(asistentes);
+        fechas.add(new Fecha(1, 8, 2020));
+        fechas.add(new Fecha(16,8,2020));
+        fechas.add(new Fecha(17,8,2020));
+
+        // Creamos un FechaAdapter pasándole todos nuestras Fechas
+        adapter = new FechaAdapter(fechas);
         // Asociamos el adaptador al RecyclerView
         recyclerView.setAdapter(adapter);
 
