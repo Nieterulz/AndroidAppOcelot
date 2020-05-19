@@ -1,4 +1,4 @@
-package es.uca.hito4.ui.localizacion;
+package es.uca.hito4.localizacion;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

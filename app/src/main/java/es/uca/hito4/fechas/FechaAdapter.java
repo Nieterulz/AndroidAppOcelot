@@ -23,7 +23,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
 import es.uca.hito4.R;
-import es.uca.hito4.ui.localizacion.LocalizacionFragment;
+import es.uca.hito4.localizacion.LocalizacionFragment;
 
 public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.MyViewHolder> {
     private ArrayList<Fecha> fechas;
@@ -55,7 +55,7 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.MyViewHolder
                 {
                     int X = fechas.get(position).getDifDias();
                     Snackbar.make(holder.itemView,"Faltan " + X + " días hasta la fecha",Snackbar.LENGTH_LONG)
-                            .setAction("Notificar", new View.OnClickListener() {
+                            .setAction("Entendido", new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
 

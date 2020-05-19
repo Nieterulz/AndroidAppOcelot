@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/nav_programa"
-        android:name="es.uca.hito4.ui.programa.ProgramaFragment"
+        android:name="es.uca.hito4.programa.ProgramaFragment"
         android:label="@string/menu_programa"
         tools:layout="@layout/fragment_programa" />
 
@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/nav_localizacion"
-        android:name="es.uca.hito4.ui.localizacion.LocalizacionFragment"
+        android:name="es.uca.hito4.localizacion.LocalizacionFragment"
         android:label="@string/menu_localizacion"
         tools:layout="@layout/fragment_localizacion" />
 
