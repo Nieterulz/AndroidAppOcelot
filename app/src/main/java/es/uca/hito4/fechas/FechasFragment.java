@@ -33,9 +33,11 @@ public class FechasFragment extends Fragment {
         // Lo asociamos al RecyclerView
         recyclerView.setLayoutManager(layoutManager);
 
-        fechas.add(new Fecha(1, 8, 2020));
-        fechas.add(new Fecha(16,8,2020));
-        fechas.add(new Fecha(17,8,2020));
+        fechas.clear();
+        fechas.add(new Fecha(1, 5, 2020, "Venta de tickets"));
+        fechas.add(new Fecha(15,5,2020, "Nuevas confirmaciones"));
+        fechas.add(new Fecha(20,6,2020, "Primer día del evento"));
+        fechas.add(new Fecha(21,6,2020, "Segundo día del evento"));
 
         // Creamos un FechaAdapter pasándole todos nuestras Fechas
         adapter = new FechaAdapter(fechas);

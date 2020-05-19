@@ -1,34 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bordes_redondos"
     android:layout_marginBottom="30dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="@drawable/bordes_redondos">
+
+
+    <TextView
+        android:id="@+id/text_evento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="8dp"
+        android:text="evento"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/text_fecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_fecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="2dp"
-        android:paddingVertical="15dp"
+        android:layout_marginBottom="8dp"
         android:text="hola amigos"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/text_evento" />
 
     <ImageButton
         android:id="@+id/button_fecha"
-        android:layout_width="58dp"
-        android:layout_height="53dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="2dp"
+        android:scaleType="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
