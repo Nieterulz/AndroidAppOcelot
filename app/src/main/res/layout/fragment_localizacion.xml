@@ -1,58 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="40dp"
         android:text="Lugar de celebración"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingVertical="10dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="302dp"
-        android:layout_height="126dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="El lugar de celebración será en el puerto de Cádiz en el que se extenderá una carpa para evitar el sol y en el que contaremos con un escenario para los shows previstos  "
         android:textAlignment="center"
+        android:justificationMode="inter_word"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:paddingHorizontal="35dp"/>
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
         android:autoLink="web"
+        android:textAlignment="center"
         android:text="https://www.puertocadiz.com"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:paddingBottom="25dp"/>
 
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/map"
-        android:layout_width="303dp"
-        android:layout_height="269dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="41dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"/>
 
-
-    />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
