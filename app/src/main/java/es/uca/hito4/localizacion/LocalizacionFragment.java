@@ -26,7 +26,6 @@ public class LocalizacionFragment extends Fragment implements OnMapReadyCallback
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-
         View root = inflater.inflate(R.layout.fragment_localizacion, container, false);
         mMapView = root.findViewById(R.id.map);
         initGoogleMap(savedInstanceState);

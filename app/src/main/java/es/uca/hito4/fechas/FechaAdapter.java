@@ -78,15 +78,17 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.MyViewHolder
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setContentTitle(holder.evento.getText().toString())
                         .setContentText(holder.fecha.getText().toString())
+                        .setSubText("Pulsar para abrir localización")
                         .setTicker("Abrir localización")
                         .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                         .setAutoCancel (true)
                         .setVibrate(new long[]{0, 250,250,250});
 
-                Intent intent = new Intent(context, LocalizacionFragment.class);
-                PendingIntent contIntent =
-                        PendingIntent.getActivity(context, 0, intent, 0);
 
+
+
+                Intent intent = new Intent(context, LocalizacionFragment.class);
+                PendingIntent contIntent = PendingIntent.getActivity(context, 0, intent, 0);
                 notification.setContentIntent(contIntent);
 
                 NotificationManager mNotificationManager =
