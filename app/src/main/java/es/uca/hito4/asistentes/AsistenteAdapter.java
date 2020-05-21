@@ -11,15 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 import es.uca.hito4.R;
-import es.uca.hito4.operaciones.Get;
 
 public class AsistenteAdapter extends RecyclerView.Adapter<AsistenteAdapter.MyViewHolder> {
     public ArrayList<Asistente> asistentes;
@@ -45,23 +39,9 @@ public class AsistenteAdapter extends RecyclerView.Adapter<AsistenteAdapter.MyVi
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, FichaPersonal.class);
-
-                try {
-                    JSONObject asistente = new JSONObject();
-                    Get get = new Get(asistentes.get(position).getId());
-                    String result = get.execute().get();
-                    JSONArray array = new JSONArray(result);
-                    asistente = array.getJSONObject(0);
-                    intent.putExtra("_id", asistente.getString("_id"));
-                    intent.putExtra("nombre", asistente.getString("nombre"));
-                    intent.putExtra("dni", asistente.getString("dni"));
-                    intent.putExtra("telefono", asistente.getString("telefono"));
-                    intent.putExtra("fechaNacimiento", asistente.getString("f_nac"));
-                    intent.putExtra("fechaInscripcion", asistente.getString("f_ins"));
-                    context.startActivity(intent);
-                } catch ( JSONException | InterruptedException | ExecutionException e) {
-                    e.printStackTrace();
-                }
+                String _id = asistentes.get(position).getId();
+                intent.putExtra("_id", _id);
+                context.startActivity(intent);
             }
         });
     }
@@ -80,7 +60,6 @@ public class AsistenteAdapter extends RecyclerView.Adapter<AsistenteAdapter.MyVi
             button = (ImageButton) v.findViewById(R.id.ficha_personal);
             itemView.setOnClickListener(this);
         }
-
 
         @Override
         public void onClick(View v) {

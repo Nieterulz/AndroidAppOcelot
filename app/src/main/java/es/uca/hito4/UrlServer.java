@@ -1,4 +1,4 @@
-package es.uca.hito4.operaciones;
+package es.uca.hito4;
 
 public class UrlServer {
     private static String SERVER = "http://192.168.8.101:8080/asistentes";

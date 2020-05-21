@@ -22,12 +22,13 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
+import es.uca.hito4.MainActivity;
 import es.uca.hito4.R;
 import es.uca.hito4.localizacion.LocalizacionFragment;
 
 public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.MyViewHolder> {
     private ArrayList<Fecha> fechas;
-    private Context context;
+    private static Context context;
     private static final int NOTIF_ID = 1;
 
     public FechaAdapter(ArrayList<Fecha> myDataset) {
@@ -84,10 +85,8 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.MyViewHolder
                         .setAutoCancel (true)
                         .setVibrate(new long[]{0, 250,250,250});
 
-
-
-
-                Intent intent = new Intent(context, LocalizacionFragment.class);
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 PendingIntent contIntent = PendingIntent.getActivity(context, 0, intent, 0);
                 notification.setContentIntent(contIntent);
 
@@ -121,7 +120,6 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.MyViewHolder
             button = v.findViewById(R.id.button_fecha);
             itemView.setOnClickListener(this);
         }
-
 
         @Override
         public void onClick(View v) {

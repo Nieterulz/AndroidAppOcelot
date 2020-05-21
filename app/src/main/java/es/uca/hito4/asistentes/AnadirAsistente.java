@@ -1,6 +1,7 @@
 package es.uca.hito4.asistentes;
 
 import android.app.DatePickerDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -14,9 +15,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import es.uca.hito4.DatePickerFragment;
 import es.uca.hito4.R;
-import es.uca.hito4.operaciones.Post;
+import es.uca.hito4.UrlServer;
 
 public class AnadirAsistente extends AppCompatActivity {
     @Override
@@ -78,14 +86,9 @@ public class AnadirAsistente extends AppCompatActivity {
                     asistente.put("telefono", telefono);
                     asistente.put("f_nac", f_nac);
                     asistente.put("f_ins", f_ins);
-
                     Post post = new Post(asistente);
-                    post.execute().get();
+                    post.execute();
 
-                    Toast.makeText(getApplicationContext(),
-                            "Asistente añadido con éxito",
-                            Toast.LENGTH_SHORT).show();
-                    finish();
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(),
                             e.getMessage(),
@@ -108,6 +111,64 @@ public class AnadirAsistente extends AppCompatActivity {
         if(nombre.equals("") || dni.equals("") || telefono.equals("") || f_nac.equals("") || f_ins.equals(""))
         {
             throw new Exception("Error, no pueden existir campos vacíos");
+        }
+    }
+
+    public class Post extends AsyncTask<Void, Void, String> {
+        private JSONObject asistente;
+        private final String SERVER = UrlServer.getSERVER();
+
+        public Post(JSONObject asistente)
+        {
+            this.asistente = asistente;
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            String REQUEST_METHOD = "POST";
+
+            String result;
+            String inputLine;
+
+            try {
+                URL url = new URL(SERVER);
+                HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+                httpCon.setDoOutput(true);
+                httpCon.setRequestMethod(REQUEST_METHOD);
+                httpCon.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+                httpCon.setRequestProperty("Accept", "application/json");
+                OutputStreamWriter out = new OutputStreamWriter(
+                        httpCon.getOutputStream());
+                out.write(asistente.toString());
+                out.flush();
+                out.close();
+                httpCon.getInputStream();
+
+                InputStreamReader streamReader = new InputStreamReader(httpCon.getInputStream());
+                BufferedReader reader = new BufferedReader(streamReader);
+                StringBuilder stringBuilder = new StringBuilder();
+                while((inputLine = reader.readLine()) != null){
+                    stringBuilder.append(inputLine);
+                }
+                reader.close();
+                streamReader.close();
+                result = stringBuilder.toString();
+            } catch(IOException e) {
+                e.printStackTrace();
+                result = "error";
+            }
+
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(String result){
+            super.onPostExecute(result);
+            System.out.println(result);
+            Toast.makeText(getApplicationContext(),
+                    "Asistente añadido con éxito",
+                    Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 }
