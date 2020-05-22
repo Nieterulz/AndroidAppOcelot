@@ -1,20 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/text_programa"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Carlos 'Ocelote' Rodríguez"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="27sp"
+            android:paddingVertical="10dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
+            android:src="@drawable/ocelote"
+
+            />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Carlos 'Ocelote' Rodríguez Santiago es un jugador retirado conocido por jugar en SK Gaming. Es el fundador de Gamers2, ahora llamado G2 Esports."
+            android:textAlignment="center"
+            android:justificationMode="inter_word"
+            android:textSize="18sp"
+            android:paddingHorizontal="35dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="15dp"
+            />
+
+        <!-- ////////////////////////////////////!-->
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ibai Llanos"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="27sp"
+            android:paddingVertical="10dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
+            android:src="@drawable/ibai"
+
+            />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ibai 'Ibai' Llanos es un Shoutcaster de League of Legends español. Ahora trabaja en G2 Esports"
+            android:textAlignment="center"
+            android:justificationMode="inter_word"
+            android:textSize="18sp"
+            android:paddingHorizontal="35dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="15dp"
+            />
+
+        <!-- ////////////////////////////////////!-->
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lee 'Faker' Sang-Hyeok"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="27sp"
+            android:paddingVertical="10dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
+            android:src="@drawable/faker"
+
+            />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lee 'Faker' Sang-hyeok (Hangul: 이상혁) es un jugador de esports de League of Legends, actualmente jugador y copropietario en T1."
+            android:textAlignment="center"
+            android:justificationMode="inter_word"
+            android:textSize="18sp"
+            android:paddingHorizontal="35dp"
+            android:paddingBottom="20dp"/>
+
+
+
+    </LinearLayout>
+</ScrollView>

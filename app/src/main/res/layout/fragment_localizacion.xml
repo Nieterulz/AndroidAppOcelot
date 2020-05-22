@@ -9,7 +9,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lugar de celebración"
+        android:text="@string/titulo_localizacion"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
@@ -20,7 +20,7 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="El lugar de celebración será en el puerto de Cádiz en el que se extenderá una carpa para evitar el sol y en el que contaremos con un escenario para los shows previstos  "
+        android:text="@string/contenido_localizacion"
         android:textAlignment="center"
         android:justificationMode="inter_word"
         android:textSize="18sp"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:autoLink="web"
         android:textAlignment="center"
-        android:text="https://www.puertocadiz.com"
+        android:text="@string/link_localizacion"
         android:paddingBottom="25dp"/>
 
 
