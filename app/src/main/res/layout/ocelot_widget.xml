@@ -1,0 +1,14 @@
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/widget"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/widget_margin">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:src="@mipmap/ic_launcher"
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
+</RelativeLayout>

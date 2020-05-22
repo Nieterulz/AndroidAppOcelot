@@ -26,4 +26,8 @@
     <string name="menu_localizacion">Localización</string>
     <string name="anadir_asistente">Añadir Asistente</string>
     <string name="eliminar_asistente">¿Eliminar asistente?</string>
+    <string name="add_widget">Add widget</string>
+    <string name="contenido_localizacion">El lugar de celebración será en el puerto de Cádiz en el que se extenderá una carpa para evitar el sol y en el que contaremos con un escenario para los shows previstos</string>
+    <string name="titulo_localizacion">Lugar de celebración</string>
+    <string name="link_localizacion">https://www.puertocadiz.com</string>
 </resources>
