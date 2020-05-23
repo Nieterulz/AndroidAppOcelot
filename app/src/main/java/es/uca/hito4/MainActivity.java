@@ -23,6 +23,8 @@ import es.uca.hito4.programa.ProgramaFragment;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Toolbar toolbar;
+    NavigationView navigationView;
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,28 +40,36 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toogle);
         toogle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         navigationView.setCheckedItem(R.id.nav_asistentes);
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.contenedor, new AsistentesFragment())
                 .commit();
 
         try {
-            if (getIntent().getExtras().containsKey("localizacion")) {
-                navigationView.setCheckedItem(R.id.nav_localizacion);
-                toolbar.setTitle("Localización");
-                fragmentManager.beginTransaction()
-                        .replace(R.id.contenedor, new LocalizacionFragment())
-                        .commit();
-            } else if(getIntent().getExtras().containsKey("programa")) {
-                navigationView.setCheckedItem(R.id.nav_programa);
-                toolbar.setTitle("Programa");
-                fragmentManager.beginTransaction()
-                        .replace(R.id.contenedor, new ProgramaFragment())
-                        .commit();
+            Intent intent = getIntent();
+            if (intent.getExtras().containsKey("changeFragment")) {
+                String changeFragment = intent.getExtras().getString("changeFragment");
+                if(changeFragment.equals("localizacion"))
+                {
+                    navigationView.setCheckedItem(R.id.nav_localizacion);
+                    toolbar.setTitle("Localización");
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.contenedor, new LocalizacionFragment())
+                            .commit();
+                }
+
+                if(changeFragment.equals("programa"))
+                {
+                    navigationView.setCheckedItem(R.id.nav_programa);
+                    toolbar.setTitle("Programa");
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.contenedor, new ProgramaFragment())
+                            .commit();
+                }
             }
         }catch(Exception e){}
 

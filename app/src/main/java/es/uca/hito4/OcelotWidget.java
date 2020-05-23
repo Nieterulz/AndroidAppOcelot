@@ -31,8 +31,13 @@ public class OcelotWidget extends AppWidgetProvider {
 
         for (int appWidgetId : appWidgetIds) {
             Intent intent = new Intent(context, MainActivity.class);
+            if(intent.hasExtra("changeFragment"))
+                intent.removeExtra("changeFragment");
+            intent.putExtra("changeFragment", "programa");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             PendingIntent pendingIntent =
-                    PendingIntent.getActivity(context, 0, intent, 0);
+                    PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
             RemoteViews views = new RemoteViews(context.getPackageName(),
                     R.layout.ocelot_widget);
             views.setOnClickPendingIntent(R.id.widget, pendingIntent);
