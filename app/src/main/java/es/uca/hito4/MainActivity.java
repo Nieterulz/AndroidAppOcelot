@@ -1,5 +1,7 @@
 package es.uca.hito4;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -49,6 +51,15 @@ public class MainActivity extends AppCompatActivity
                 .replace(R.id.contenedor, new AsistentesFragment())
                 .commit();
 
+        Intent i = new Intent(this, OcelotWidget.class);
+        i.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+// Use an array and EXTRA_APPWIDGET_IDS instead of AppWidgetManager.EXTRA_APPWIDGET_ID,
+// since it seems the onUpdate() is only fired on that:
+        int[] ids = AppWidgetManager.getInstance(getApplication())
+                .getAppWidgetIds(new ComponentName(getApplication(), OcelotWidget.class));
+        i.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids);
+        sendBroadcast(i);
+
         try {
             Intent intent = getIntent();
             if (intent.getExtras().containsKey("changeFragment")) {
@@ -60,15 +71,20 @@ public class MainActivity extends AppCompatActivity
                     fragmentManager.beginTransaction()
                             .replace(R.id.contenedor, new LocalizacionFragment())
                             .commit();
+                    intent.removeExtra("changeFragment");
                 }
-
-                if(changeFragment.equals("programa"))
-                {
-                    navigationView.setCheckedItem(R.id.nav_programa);
-                    toolbar.setTitle("Programa");
-                    fragmentManager.beginTransaction()
-                            .replace(R.id.contenedor, new ProgramaFragment())
-                            .commit();
+            }
+            else {
+                if (intent.getExtras().containsKey("widget")) {
+                    String changeFragment = intent.getExtras().getString("widget");
+                    if(changeFragment.equals("widget"))
+                    {
+                        navigationView.setCheckedItem(R.id.nav_programa);
+                        toolbar.setTitle("Programa");
+                        fragmentManager.beginTransaction()
+                                .replace(R.id.contenedor, new ProgramaFragment())
+                                .commit();
+                    }
                 }
             }
         }catch(Exception e){}

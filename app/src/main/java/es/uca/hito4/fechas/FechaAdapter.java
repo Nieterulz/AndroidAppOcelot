@@ -86,10 +86,8 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.MyViewHolder
                         .setVibrate(new long[]{0, 250,250,250});
 
                 Intent intent = new Intent(context, MainActivity.class);
-                if(intent.hasExtra("changeFragment"))
-                    intent.removeExtra("changeFragment");
                 intent.putExtra("changeFragment", "localizacion");
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 PendingIntent contIntent = PendingIntent.getActivity(context,
                         0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 notification.setContentIntent(contIntent);
