@@ -62,7 +62,6 @@ public class FechaAdapter extends RecyclerView.Adapter<FechaAdapter.MyViewHolder
 
                                 }
                             })
-                            .setTextColor(Integer.parseInt("#FF0000"))
                             .show();
                 }
                 else
