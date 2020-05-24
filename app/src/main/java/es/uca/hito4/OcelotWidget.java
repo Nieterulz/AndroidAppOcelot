@@ -3,6 +3,7 @@ package es.uca.hito4;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
@@ -31,17 +32,29 @@ public class OcelotWidget extends AppWidgetProvider {
 
         for (int appWidgetId : appWidgetIds) {
             Intent intent = new Intent(context, MainActivity.class);
+            intent.putExtra("widget", "widget");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             PendingIntent pendingIntent =
-                    PendingIntent.getActivity(context, 0, intent, 0);
+                    PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
             RemoteViews views = new RemoteViews(context.getPackageName(),
                     R.layout.ocelot_widget);
             views.setOnClickPendingIntent(R.id.widget, pendingIntent);
-            appWidgetManager.updateAppWidget(appWidgetId, views); }
+            appWidgetManager.updateAppWidget(appWidgetId, views);
+        }
+
+
     }
+
 
     @Override
     public void onEnabled(Context context) {
         // Enter relevant functionality for when the first widget is created
+    }
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        super.onReceive(context, intent);
     }
 
     @Override

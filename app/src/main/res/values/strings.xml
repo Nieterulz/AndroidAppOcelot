@@ -30,4 +30,6 @@
     <string name="contenido_localizacion">El lugar de celebración será en el puerto de Cádiz en el que se extenderá una carpa para evitar el sol y en el que contaremos con un escenario para los shows previstos</string>
     <string name="titulo_localizacion">Lugar de celebración</string>
     <string name="link_localizacion">https://www.puertocadiz.com</string>
+    <string name="openDrawer">Open navigation drawer</string>
+    <string name="closeDrawer">Close navigation drawer</string>
 </resources>
