@@ -14,12 +14,14 @@
         android:text="Nombre:"
         android:textColor="@color/negro"
         android:textStyle="bold"/>
+
     <EditText
         android:id="@+id/nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10dp"
+        />
 
     <TextView
         android:layout_width="match_parent"
@@ -84,22 +86,24 @@
 
         <ImageButton
             android:id="@+id/confirm_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="35dp"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_confirm" />
+            app:srcCompat="@drawable/ic_confirm"
+            android:background="@drawable/bordes_redondos"/>
 
         <ImageButton
             android:id="@+id/cancel_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="50dp"
+            android:layout_marginEnd="35dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_cancel" />
+            app:srcCompat="@drawable/ic_cancel"
+            android:background="@drawable/bordes_redondos"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
