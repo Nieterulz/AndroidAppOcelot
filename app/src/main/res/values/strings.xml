@@ -32,4 +32,15 @@
     <string name="link_localizacion">https://www.puertocadiz.com</string>
     <string name="openDrawer">Open navigation drawer</string>
     <string name="closeDrawer">Close navigation drawer</string>
+    <string name="nombre">Nombre:</string>
+    <string name="dni">DNI:</string>
+    <string name="tel_fono">Teléfono:</string>
+    <string name="fecha_de_nacimiento">Fecha de nacimiento:</string>
+    <string name="fecha_de_inscripcion">Fecha de inscripción:</string>
+    <string name="descripcion_ocelote">Carlos \'Ocelote\' Rodríguez Santiago es un jugador retirado conocido por jugar en SK Gaming. Es el fundador de Gamers2, ahora llamado G2 Esports.</string>
+    <string name="nombre_ocelote">Carlos \'Ocelote\' Rodríguez</string>
+    <string name="nombre_ibai">Ibai Llanos</string>
+    <string name="descripcion_ibai">Ibai \'Ibai\' Llanos es un Shoutcaster de League of Legends español. Ahora trabaja en G2 Esports</string>
+    <string name="nombre_faker">Lee \'Faker\' Sang-Hyeok</string>
+    <string name="descripcion_faker">Lee \'Faker\' Sang-hyeok (Hangul: 이상혁) es un jugador de esports de League of Legends, actualmente jugador y copropietario en T1.</string>
 </resources>

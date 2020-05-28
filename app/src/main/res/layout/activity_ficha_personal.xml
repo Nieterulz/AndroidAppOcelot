@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombre:"
+        android:text="@string/nombre"
         android:textColor="@color/negro"
         android:textStyle="bold"/>
     <TextView
@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DNI:"
+        android:text="@string/dni"
         android:textColor="@color/negro"
         android:textStyle="bold" />
     <TextView
@@ -35,7 +35,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Teléfono:"
+        android:text="@string/tel_fono"
         android:textColor="@color/negro"
         android:textStyle="bold"/>
     <TextView
@@ -47,7 +47,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fecha de nacimiento:"
+        android:text="@string/fecha_de_nacimiento"
         android:textColor="@color/negro"
         android:textStyle="bold" />
     <TextView
@@ -59,7 +59,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fecha de inscripción:"
+        android:text="@string/fecha_de_inscripcion"
         android:textColor="@color/negro"
         android:textStyle="bold"/>
     <TextView
