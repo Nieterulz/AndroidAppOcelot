@@ -60,7 +60,6 @@ public class EliminarAsistente extends DialogFragment {
 
             String result;
             String inputLine;
-
             try {
                 URL url = new URL(SERVER + "/" + _id);
                 HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
@@ -83,7 +82,6 @@ public class EliminarAsistente extends DialogFragment {
                 e.printStackTrace();
                 result = "error";
             }
-
             return result;
         }
 

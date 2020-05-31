@@ -126,10 +126,8 @@ public class AnadirAsistente extends AppCompatActivity {
         @Override
         protected String doInBackground(Void... voids) {
             String REQUEST_METHOD = "POST";
-
             String result;
             String inputLine;
-
             try {
                 URL url = new URL(SERVER);
                 HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
@@ -157,7 +155,6 @@ public class AnadirAsistente extends AppCompatActivity {
                 e.printStackTrace();
                 result = "error";
             }
-
             return result;
         }
 

@@ -88,7 +88,6 @@ public class AsistentesFragment extends Fragment {
                 connection.setReadTimeout(READ_TIMEOUT);
                 connection.setConnectTimeout(CONNECTION_TIMEOUT);
                 connection.connect();
-
                 // get the string from the input stream
                 InputStreamReader streamReader = new InputStreamReader(connection.getInputStream());
                 BufferedReader reader = new BufferedReader(streamReader);
@@ -104,7 +103,6 @@ public class AsistentesFragment extends Fragment {
                 e.printStackTrace();
                 result = "error";
             }
-
             return result;
         }
 
